@@ -1,11 +1,16 @@
+import "@/global.css";
+
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
+import { StyleSheet } from "react-native";
 
 import {
   Roboto_400Regular,
   Roboto_700Bold,
   useFonts,
 } from "@expo-google-fonts/roboto";
+import { Text } from "./components/ui/text";
+import { Center } from "./components/ui/center";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
@@ -15,18 +20,13 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={{ fontFamily: "Roboto_700Bold" }}>Hello ignite gym</Text>
-      <StatusBar style="auto" />
-    </View>
+    <GluestackUIProvider mode="light">
+      <Center className="flex-1 bg-red500">
+        <Text size="3xl" bold>
+          Hello ignite gym
+        </Text>
+        <StatusBar style="auto" />
+      </Center>
+    </GluestackUIProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "red",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
