@@ -2,7 +2,6 @@ import "@/global.css";
 
 import { StatusBar } from "expo-status-bar";
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
-import { StyleSheet } from "react-native";
 
 import {
   Roboto_400Regular,
