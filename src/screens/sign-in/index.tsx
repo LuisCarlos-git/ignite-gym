@@ -5,7 +5,7 @@ import * as Styles from './styles';
 export function SignIn() {
   return (
     <Styles.Container>
-      <Text>SignIn</Text>
+      <Styles.Text>SignIn</Styles.Text>
     </Styles.Container>
   );
 }
