@@ -30,6 +30,6 @@ export const theme = {
     14: 56,
     33: 148,
   },
-};
+} as const;
 
 export type Theme = typeof theme;

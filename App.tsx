@@ -8,7 +8,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <SignIn />
-      <StatusBar />
+      <StatusBar style="auto" />
     </ThemeProvider>
   );
 }
