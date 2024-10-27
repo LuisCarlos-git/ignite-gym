@@ -6,7 +6,8 @@
     "paths": {
       "@screens": ["./src/screens/index.ts"],
       "@styles/*": ["./src/styles/*"],
-      "@components": ["./src/components/index.ts"]
+      "@components": ["./src/components/index.ts"],
+      "@assets/*": ["./assets/*"]
     }
   }
 }

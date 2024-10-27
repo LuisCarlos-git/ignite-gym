@@ -15,3 +15,10 @@ export const Text = styled.Text`
     font-family: ${theme.fonts.heading};
   `}
 `;
+
+export const Image = styled.Image`
+  width: 100%;
+  position: absolute;
+  height: 624px;
+  top: 0;
+`;
