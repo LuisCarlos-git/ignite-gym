@@ -30,6 +30,12 @@ export const theme = {
     14: 56,
     33: 148,
   },
+  utils: {
+    px: (value: number) => `
+      padding-left: ${value}px;
+      padding-right: ${value}px;
+    `,
+  },
 } as const;
 
 export type Theme = typeof theme;
