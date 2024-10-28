@@ -32,7 +32,6 @@ export function SignIn() {
         />
 
         <Button label="Entrar" />
-        <Button label="Entrar" variant="outline" />
       </Styles.FormWrapper>
     </Styles.Container>
   );

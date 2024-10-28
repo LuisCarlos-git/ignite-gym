@@ -6,6 +6,10 @@ type VariantProps = {
   variant: 'solid' | 'outline';
 };
 
+type ButtonStyleProps = {
+  isLoading: boolean;
+} & VariantProps;
+
 const buttonVariantMapper = {
   solid: (theme: DefaultTheme) => css`
     background-color: ${theme.colors.green700};
@@ -24,12 +28,15 @@ const labelVariantMapper = {
   `,
 };
 
-export const Button = styled(TouchableOpacity)<VariantProps>`
-  ${({ theme, variant }) => css`
+export const Button = styled(TouchableOpacity)<ButtonStyleProps>`
+  ${({ theme, variant, isLoading }) => css`
     width: 100%;
-    align-items: center;
+    justify-content: center;
     margin-top: ${theme.space[14]};
     border-radius: 6px;
+    flex-direction: row;
+
+    opacity: ${isLoading ? 0.5 : 1};
 
     ${buttonVariantMapper[variant](theme)}
   `}
