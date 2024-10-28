@@ -3,7 +3,7 @@ import * as Styles from './styles';
 import background from '@assets/background.png';
 import Logo from '@assets/logo.svg';
 
-import { TextField } from '@components';
+import { Button, TextField } from '@components';
 import { useForm } from 'react-hook-form';
 
 export function SignIn() {
@@ -30,6 +30,9 @@ export function SignIn() {
           placeholder="Senha"
           keyboardType="visible-password"
         />
+
+        <Button label="Entrar" />
+        <Button label="Entrar" variant="outline" />
       </Styles.FormWrapper>
     </Styles.Container>
   );
