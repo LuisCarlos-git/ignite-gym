@@ -4,6 +4,7 @@ export const Container = styled.View`
   ${({ theme }) => css`
     flex: 1;
     padding-top: ${theme.space[33]};
+    padding-bottom: 24px;
     background-color: ${theme.colors.gray900};
   `}
 `;
@@ -44,5 +45,21 @@ export const FormWrapper = styled.View`
     flex: 1;
 
     ${theme.utils.px(24)}
+  `}
+`;
+
+export const SubmitButtonWrapper = styled.View`
+  ${({ theme }) => css`
+    margin-top: ${theme.space[14]};
+    width: 100%;
+  `}
+`;
+
+export const FooterWrapper = styled.View`
+  ${({ theme }) => css`
+    gap: 16px;
+    align-items: center;
+    padding-top: 24px;
+    width: 100%;
   `}
 `;

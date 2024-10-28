@@ -32,7 +32,6 @@ export const Button = styled(TouchableOpacity)<ButtonStyleProps>`
   ${({ theme, variant, isLoading }) => css`
     width: 100%;
     justify-content: center;
-    margin-top: ${theme.space[14]};
     border-radius: 6px;
     flex-direction: row;
 

@@ -3,8 +3,10 @@ import { TextFieldProps } from './types';
 import * as Styles from './styles';
 import { Controller, get, useFormContext } from 'react-hook-form';
 import { theme } from '@styles/theme';
+import { useState } from 'react';
 
 export function TextField({ name, control, ...rest }: TextFieldProps) {
+  const [isFocused, setIsFocused] = useState<boolean>(false);
   return (
     <Controller
       control={control}
@@ -12,7 +14,13 @@ export function TextField({ name, control, ...rest }: TextFieldProps) {
       render={({ field, fieldState }) => (
         <Styles.TextFieldWrapper>
           <Styles.TextField
-            onBlur={field.onBlur}
+            hasError={!!fieldState.error?.message}
+            isFocused={isFocused}
+            onBlur={() => {
+              field.onBlur();
+              setIsFocused(false);
+            }}
+            onFocus={() => setIsFocused(true)}
             onChangeText={field.onChange}
             value={field.value}
             placeholderTextColor={theme.colors.gray300}
