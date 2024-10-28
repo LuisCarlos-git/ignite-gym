@@ -1,5 +1,3 @@
-import { SignIn } from '@screens';
-
 import { theme } from '@styles/theme';
 
 import { StatusBar } from 'expo-status-bar';
@@ -10,6 +8,7 @@ import {
   useFonts,
 } from '@expo-google-fonts/roboto';
 import { Loading } from '@components';
+import { Routes } from '@routes';
 
 export default function App() {
   const [loaded] = useFonts({
@@ -19,7 +18,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      {!loaded ? <Loading /> : <SignIn />}
+      {!loaded ? <Loading /> : <Routes />}
       <StatusBar style="light" />
     </ThemeProvider>
   );
