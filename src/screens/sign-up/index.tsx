@@ -4,11 +4,19 @@ import background from '@assets/background.png';
 import Logo from '@assets/logo.svg';
 
 import { Button, TextField } from '@components';
+import { useNavigation } from '@react-navigation/native';
+import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { ScrollView } from 'react-native';
+import { PublicNavigatorRoutesProps } from 'src/routes/PublicRoutes';
 
 export function SignUp() {
   const { control } = useForm();
+  const navigator = useNavigation<PublicNavigatorRoutesProps>();
+
+  const handleNavigateToSignIn = useCallback(() => {
+    navigator.navigate('sign-in');
+  }, []);
 
   return (
     <ScrollView
@@ -48,7 +56,11 @@ export function SignUp() {
             <Button label="Criar e acessar" />
           </Styles.SubmitButtonWrapper>
           <Styles.FooterWrapper>
-            <Button label="Voltar para o login" variant="outline" />
+            <Button
+              onPress={handleNavigateToSignIn}
+              label="Voltar para o login"
+              variant="outline"
+            />
           </Styles.FooterWrapper>
         </Styles.FormWrapper>
       </Styles.Container>

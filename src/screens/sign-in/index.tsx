@@ -4,11 +4,19 @@ import background from '@assets/background.png';
 import Logo from '@assets/logo.svg';
 
 import { Button, TextField } from '@components';
+import { useNavigation } from '@react-navigation/native';
+import { PublicNavigatorRoutesProps } from '@routes/PublicRoutes';
+import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { ScrollView } from 'react-native';
 
 export function SignIn() {
   const { control } = useForm();
+  const navigator = useNavigation<PublicNavigatorRoutesProps>();
+
+  const handleNavigateToSignUp = useCallback(() => {
+    navigator.navigate('sign-up');
+  }, []);
 
   return (
     <ScrollView
@@ -48,7 +56,11 @@ export function SignIn() {
           </Styles.SubmitButtonWrapper>
           <Styles.FooterWrapper>
             <Styles.Text>Ainda não tem acesso?</Styles.Text>
-            <Button label="Criar conta" variant="outline" />
+            <Button
+              onPress={handleNavigateToSignUp}
+              label="Criar conta"
+              variant="outline"
+            />
           </Styles.FooterWrapper>
         </Styles.FormWrapper>
       </Styles.Container>
