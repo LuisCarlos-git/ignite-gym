@@ -1,5 +1,5 @@
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import { PublicRoutes } from './PublicRoutes';
+// import { PublicRoutes } from './PublicRoutes';
 import { theme } from '@styles/theme';
 import { View } from 'react-native';
 import { PrivateRoutes } from './PrivateRoutes';
@@ -10,9 +10,8 @@ export function Routes() {
 
   return (
     <View style={{ flex: 1, backgroundColor: theme.colors.gray900 }}>
-      <NavigationContainer>
-        <PublicRoutes />
-        {/* <PrivateRoutes /> */}
+      <NavigationContainer theme={navigatorTheme}>
+        <PrivateRoutes />
       </NavigationContainer>
     </View>
   );
