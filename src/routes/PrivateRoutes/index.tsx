@@ -1,30 +1,29 @@
 import {
-  createNativeStackNavigator,
-  NativeStackNavigationProp,
-} from '@react-navigation/native-stack';
-import { SignIn, SignUp } from '@screens';
-import { Text, View } from 'react-native';
+  createBottomTabNavigator,
+  BottomTabNavigationProp,
+} from '@react-navigation/bottom-tabs';
+
+import { Exercise, History, Home, Profile, SignIn, SignUp } from '@screens';
 
 type PrivateRoutesProps = {
-  private: undefined;
+  home: undefined;
+  profile: undefined;
+  exercise: undefined;
+  history: undefined;
 };
 
 export type PrivateNavigatorRoutesProps =
-  NativeStackNavigationProp<PrivateRoutesProps>;
+  BottomTabNavigationProp<PrivateRoutesProps>;
 
-const { Navigator, Screen } = createNativeStackNavigator<PrivateRoutesProps>();
+const { Navigator, Screen } = createBottomTabNavigator<PrivateRoutesProps>();
 
 export function PrivateRoutes() {
   return (
     <Navigator screenOptions={{ headerShown: false }}>
-      <Screen
-        name="private"
-        component={() => (
-          <View>
-            <Text>private route</Text>
-          </View>
-        )}
-      />
+      <Screen name="home" component={Home} />
+      <Screen name="history" component={History} />
+      <Screen name="profile" component={Profile} />
+      <Screen name="exercise" component={Exercise} />
     </Navigator>
   );
 }
