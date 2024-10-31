@@ -1,12 +1,10 @@
 import * as Styles from './styles';
 import { Header } from './components/header';
-import { Group } from './components/group';
 import { useState } from 'react';
-import { GROUPS } from './constants';
+import { EXERCISES, GROUPS } from './constants';
 import { ListGroup } from './components/list-group';
 import { HeaderExercises } from './components/header-exercises';
-import { Card } from '@components';
-import { ExerciseCard } from './components/exercise-card';
+import { ExerciseList } from './components/exercise-list';
 
 export function Home() {
   const [selectedGroup, setSelectedGroup] = useState<string>(GROUPS[0]);
@@ -21,13 +19,7 @@ export function Home() {
           selectedGroup={selectedGroup}
         />
         <HeaderExercises />
-        <Styles.ExerciseListContent>
-          <ExerciseCard />
-          <ExerciseCard />
-          <ExerciseCard />
-          <ExerciseCard />
-          <ExerciseCard />
-        </Styles.ExerciseListContent>
+        <ExerciseList exercises={EXERCISES} />
       </Styles.Content>
     </Styles.Container>
   );

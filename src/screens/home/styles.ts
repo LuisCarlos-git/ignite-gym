@@ -8,6 +8,7 @@ export const Container = styled.View`
 
 export const Content = styled.View`
   ${({ theme }) => css`
+    flex: 1;
     ${theme.utils.px(theme.space[5])}
   `}
 `;
