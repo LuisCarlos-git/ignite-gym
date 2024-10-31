@@ -107,6 +107,10 @@ export const theme = {
       padding-left: ${value}px;
       padding-right: ${value}px;
     `,
+    py: (value: number) => `
+      padding-top: ${value}px;
+      padding-bottom: ${value}px;
+    `,
   },
 } as const;
 
