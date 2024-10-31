@@ -18,7 +18,7 @@ export function ExerciseCard(props: ExerciseCardProps) {
         />
         <Styles.Content>
           <Styles.Heading>Exercício</Styles.Heading>
-          <Styles.Text>3 séries x 12 repetições</Styles.Text>
+          <Styles.Text numberOfLines={2}>3 séries x 12 repetições</Styles.Text>
         </Styles.Content>
         <ChevronRight size={24} color={theme.colors.gray200} />
       </Card>
